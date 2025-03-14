@@ -58,3 +58,36 @@ const type = new Typed('.multiple-text',{
    backDelay: 1000,
    loop: true
 })
+
+/*==================== send email ====================*/
+
+const form = document.querySelector('#form');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  emailjs.init({
+    publicKey:"KmVc0mC27wMfFee5Q",
+  });
+
+  emailjs.sendForm( "service_38btk7i", "template_qrhsn5g", form)
+  .then((response) => alert("Mensagem enviada com sucesso!"))
+  .catch((error) => {
+    console.log(error)
+     alert("Erro ao enviar a mensagem!")
+  });
+  
+  console.log("passei aqui")
+})
+
+/*==================== mask cel ====================*/
+function formatar(mascara, documento) {
+let i = documento.value.length;
+let saida = '#';
+let texto = mascara.substring(i);
+while (texto.substring(0, 1) != saida && texto.length ) {
+  documento.value += texto.substring(0, 1);
+  i++;
+  texto = mascara.substring(i);
+}
+}
+/*==================== end ====================*/
