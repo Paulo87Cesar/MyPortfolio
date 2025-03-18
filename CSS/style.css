@@ -147,8 +147,10 @@ span{
   color: var(--second-bg-color);
   letter-spacing: .1rem;
   font-weight: 600;
-  transition: .5 ease;
+  transition: .5s ease;    
 }
+
+
 
 .btn:hover{
   box-shadow: none;
@@ -208,7 +210,7 @@ span{
 
 .services-conteiner .service-box:hover{
  border-color: var(--main-color);
- transform: scale(1.02);
+  transform: scale(1.02); 
 }
 
 .service-box i{
